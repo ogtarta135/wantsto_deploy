@@ -1,0 +1,58 @@
+<mxfile host="drawio-mcp">
+  <diagram id="arch" name="構成図">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="620" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="repo" value="GitHub: ogtarta135/wantsto_deploy" style="swimlane;startSize=30;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="420" height="530" as="geometry"/>
+        </mxCell>
+        <mxCell id="br" value="ブランチ&#xa;main ／ claude/drawio-mcp-server-integration-enru2x" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f5f5f5;strokeColor=#999999;fontSize=11;" vertex="1" parent="repo">
+          <mxGeometry x="20" y="45" width="380" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="readme" value="README.md&#xa;概要・draw.io MCP の使い方" style="shape=note;whiteSpace=wrap;size=14;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="repo">
+          <mxGeometry x="20" y="115" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="test" value="test.txt&#xa;テスト用ファイル" style="shape=note;whiteSpace=wrap;size=14;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="repo">
+          <mxGeometry x="220" y="115" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="mcpjson" value=".mcp.json&#xa;MCP サーバー定義 (drawio)&#xa;DRAWIO_BROWSER=off" style="shape=note;whiteSpace=wrap;size=14;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="repo">
+          <mxGeometry x="20" y="215" width="380" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="docs" value="docs/architecture.drawio&#xa;この構成図" style="shape=note;whiteSpace=wrap;size=14;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="repo">
+          <mxGeometry x="20" y="325" width="380" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="hist" value="コミット履歴&#xa;Initial commit → メッセージ → Add draw.io MCP server configuration" style="rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#999999;fontSize=11;" vertex="1" parent="repo">
+          <mxGeometry x="20" y="425" width="380" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="cc" value="Claude Code&#xa;(MCP クライアント)" style="rounded=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="100" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="srv" value="draw.io MCP サーバー&#xa;npx @drawio/mcp@1.13.0 (stdio)" style="rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="270" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="tools" value="提供ツール&#xa;open_drawio_mermaid / xml / csv&#xa;search_shapes&#xa;list_pages / get_page / set_page&#xa;get_drawio_reference" style="rounded=1;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#82b366;dashed=1;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="820" y="255" width="240" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="web" value="app.diagrams.net&#xa;(draw.io エディタ)" style="ellipse;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="450" width="180" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="起動設定を読込" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;" edge="1" parent="1" source="mcpjson" target="cc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="ツール呼び出し" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;startArrow=block;" edge="1" parent="1" source="cc" target="srv">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=none;dashed=1;" edge="1" parent="1" source="srv" target="tools">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="エディタ URL を返す" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;" edge="1" parent="1" source="srv" target="web">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value=".drawio を読み書き" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;dashed=1;" edge="1" parent="1" source="srv" target="docs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
