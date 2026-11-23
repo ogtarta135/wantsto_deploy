@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "drawio": {
+      "command": "npx",
+      "args": ["-y", "@drawio/mcp@1.13.0"],
+      "env": {
+        "DRAWIO_BROWSER": "off"
+      }
+    }
+  }
+}
